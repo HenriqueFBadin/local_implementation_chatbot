@@ -1,0 +1,17 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	chatbot(chatbot)
+	retriever_agent(retriever_agent)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> chatbot;
+	chatbot -. &nbsp;False&nbsp; .-> __end__;
+	chatbot -. &nbsp;True&nbsp; .-> retriever_agent;
+	retriever_agent --> chatbot;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
